@@ -42,15 +42,16 @@ export class ReportsComponent implements OnInit, AfterViewInit, OnDestroy {
       this.reports = resp;
 
       this.reports.forEach(report => {
-        const ref = this.storage.refFromURL(report.image);
-        this.myimg.push(ref.getDownloadURL());
-        const ref2 = this.storage.refFromURL(report.audio);
-        this.myaudio.push(ref2.getDownloadURL());
-        this.meta = ref2.getMetadata();
-        this.meta.subscribe((resp)=>{
+        // const ref = this.storage.refFromURL(report.image);
+        // this.myimg.push(ref.getDownloadURL());
+        this.myimg.push(report.image);
+        // const ref2 = this.storage.refFromURL(report.audio);
+        // this.myaudio.push(ref2.getDownloadURL());
+        // this.meta = ref2.getMetadata();
+        // this.meta.subscribe((resp)=>{
           
-        console.log(resp);
-        })
+        // // console.log(resp);
+        // })
       });
       
     }));
