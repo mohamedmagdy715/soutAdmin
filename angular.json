@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "soutAdmin"
+  "defaultProject": "soutAdmin",
+  "cli": {
+    "analytics": "eb2523e3-c6f3-4e87-bfd4-1f9233f7e351"
+  }
 }
