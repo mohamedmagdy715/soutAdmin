@@ -17,7 +17,7 @@ export class AppComponent {
   constructor(private adminAuth : AdminAuthService,
               private auth : AngularFireAuth) {
     this.showSide=false;
-    console.log(this.showSide);
+    //console.log(this.showSide);
   }
   
   ngOnInit(): void {

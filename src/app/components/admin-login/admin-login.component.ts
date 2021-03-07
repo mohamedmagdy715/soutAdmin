@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AdminAuthService } from '../../services/admin-auth.service';
@@ -23,24 +23,34 @@ export class AdminLoginComponent implements OnInit {
               private auth :  AngularFireAuth) {
                 this.loginForm = this.formBuilder.group({});
                }
-
+  
   ngOnInit(): void {
+
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.pattern('((?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,})')]]
-  });
-  this.router.navigate(['/dashboard']);
-  this.auth.onAuthStateChanged((admin)=>{
-    if (admin){
-      this.router.navigate(['/dashboard']);
-    }
-  })
-  this.adminAuth.currenterr.subscribe(message => {
-    this.error = message;
-   
-  })
+      password: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern('((?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,})'),
+        ],
+      ],
+    });
+
+    this.router.navigate(['/dashboard']);
+    this.auth.onAuthStateChanged((admin) => {
+      if (admin) {
+        this.router.navigate(['/dashboard']);
+      }
+    });
+
+    this.adminAuth.currenterr.subscribe((message) => {
+      this.error = message;
+    });
 
   }
+
+
 
   login(){
     //this.loading = true;

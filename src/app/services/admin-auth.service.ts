@@ -52,10 +52,10 @@ export class AdminAuthService {
             this.err.next("");
             this.adminName.next(resp.name);
             localStorage.setItem('adminName',resp.name);
-            this.router.navigate(['admin/dashboard']);
+            this.router.navigate(['/dashboard']);
           }
           else{
-            console.log('ia m else')
+            //console.log('ia m else')
             this.auth.signOut();
           }
         })
