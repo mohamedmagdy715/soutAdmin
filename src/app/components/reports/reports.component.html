@@ -2,18 +2,19 @@
 <h1>Reports</h1>
 <br><br>
 
-<div class="container my-5 rounded report" *ngFor="let report of reports; let i = index">
+<div class="container my-4 px-5 pt-3 report" *ngFor="let report of reports; let i = index" style="border-radius: 25px;">
     <div class="row d-flex justify-content-between align-items-center report-header">
         <span class="col">Title: {{report.title}}</span>
         <span class="col">Type: {{report.type}}</span>
         <small class="col-3 text-muted ">{{report.date.toDate() | date: 'dd MM yy hh:mm' }}</small>
     </div>
+    <hr>
     <div class="container">
         <h4 class="row card-title pr-5 pt-2 report-description">
             <span style="color: #d8352b;font-weight: bold;">Description</span>
                 {{report.description}} Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi tempore dignissimos veritatis vero unde, minus numquam eligendi sit delectus sunt, enim rem eos, error commodi iusto eum repellat cumque temporibus?</h4>
         <p class="row">
-            <span class="soutplayer">
+            <span *ngIf="myaudio[i]" class="soutplayer">
                 <audio #audio [src]="myaudio[i] | async" ></audio>
                 <div>
                     <i (click)="playAudio()" class="fas fa-2x fa-play-circle" 
@@ -37,9 +38,10 @@
             
         </p>
         <p class="row">
-            <img class="img-fluid" [src]="myimg[i]" alt="img">
+            <img *ngIf="myimg[i]" class="img-fluid" [src]="myimg[i]" alt="img">
         </p>
     </div>
+    <hr>
     <div class="row justify-content-center pb-5">
         <button class="btn btn-primary col mx-auto" (click)="goToBlock(report.userId)">Reporter: {{report.userId}}</button><br>
         <button class="btn btn-danger col mx-auto" (click)="goToBlock(report.reportedId)">Repoerted: {{report.reportedId}}</button>

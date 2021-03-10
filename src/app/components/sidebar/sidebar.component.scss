@@ -7,6 +7,9 @@ a{
     display: flex;
     justify-content: center;
 }
+a:hover{
+    color:teal;
+}
 
 i{
     position: relative;
@@ -15,5 +18,5 @@ i{
 
 .list-group{
     border-radius: 20px ;
-    box-shadow: 3px 4px 5px gray;
+    box-shadow: 3px 4px 5px #424040;
 }

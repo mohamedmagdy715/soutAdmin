@@ -3,3 +3,9 @@ h1{
     color: #ac341e;
     text-align: center;
 }
+
+.user-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

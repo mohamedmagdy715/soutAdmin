@@ -19,7 +19,12 @@ color: #ac341e;
 
 .report{
   width : 80%;
-  border-bottom: 10px solid lightgray;
+  border: 2px solid white;
+  background-color: white;
+}
+
+.report:hover{
+  box-shadow: 8px 9px 10px darkgrey;
 }
 
 //sout player

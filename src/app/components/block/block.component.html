@@ -6,9 +6,9 @@
       <label for="userID">UserId:</label>
       <input type="text" class="form-control" name="id" id="userID" placeholder="Enter user ID" [(ngModel)]="userId">
     </div>
-    <div class="text-center">
+    <div class="user-info mb-5">
         <button type="button"  class="btn btn-warning" (click)="getUserInfo()">Get User Info</button><br><br>
-        <div #userInfo class="user-info" hidden="true">
+        <div #userInfo class="" hidden="true">
             <div class="card" style="width: 18rem;"> 
                 <img class="card-img-top" [src]="userProfilePic" alt="Card image cap"> 
                 <div class="card-body"> 
