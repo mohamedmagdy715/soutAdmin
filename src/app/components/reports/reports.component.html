@@ -15,7 +15,7 @@
                 {{report.description}} Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi tempore dignissimos veritatis vero unde, minus numquam eligendi sit delectus sunt, enim rem eos, error commodi iusto eum repellat cumque temporibus?</h4>
         <p class="row">
             <span *ngIf="myaudio[i]" class="soutplayer">
-                <audio #audio [src]="myaudio[i] | async" ></audio>
+                <audio #audio [src]="myaudio[i]" ></audio>
                 <div>
                     <i (click)="playAudio()" class="fas fa-2x fa-play-circle" 
                     style="color: #d8352b;position: relative;top: 3px;"></i>
